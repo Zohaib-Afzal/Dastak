@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.dastak.dastak.ui.home.HomeFragment"
+        android:label="menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_the_good_life_foundation"
+        android:name="com.dastak.dastak.ui.theGoodLifeFoundation.TheGoodLifeFoundation"
+        android:label="menu_the_good_life_foundation"
+        tools:layout="@layout/fragment_the_good_life_foundation" />
+
+    <fragment
+        android:id="@+id/nav_drugs_information"
+        android:name="com.dastak.dastak.ui.drugsInformation.DrugsInformation"
+        android:label="menu_nav_drugs_information"
+        tools:layout="@layout/fragment_drugs_information" />
+
+    <fragment
+        android:id="@+id/nav_drugs_we_treat"
+        android:name="com.dastak.dastak.ui.drugsWeTreat.DrugsWeTreat"
+        android:label="menu_drugs_we_treat"
+        tools:layout="@layout/fragment_drugs_we_treat" />
+
+    <fragment
+        android:id="@+id/nav_director_message"
+        android:name="com.dastak.dastak.ui.directorMessage.DirectorMessage"
+        android:label="menu_director_message"
+        tools:layout="@layout/fragment_become_our_member" />
+
+    <fragment
+        android:id="@+id/nav_our_advisory_board"
+        android:name="com.dastak.dastak.ui.ourAdvisoryBoard.OurAdvisoryBoard"
+        android:label="menu_our_advisory_board"
+        tools:layout="@layout/fragment_our_advisory_board" />
+    <fragment
+        android:id="@+id/nav_become_our_member"
+        android:name="com.dastak.dastak.ui.becomeOurMember.BecomeOurMember"
+        android:label="menu_become_our_member"
+        tools:layout="@layout/fragment_our_advisory_board" />
+    <fragment
+        android:id="@+id/nav_seek_help"
+        android:name="com.dastak.dastak.ui.seekHelp.SeekHelp"
+        android:label="menu_seek_help"
+        tools:layout="@layout/fragment_our_advisory_board" />
+    <fragment
+        android:id="@+id/nav_contact_us"
+        android:name="com.dastak.dastak.ui.contactUs.ContactUs"
+        android:label="menu_contact_us"
+        tools:layout="@layout/fragment_our_advisory_board" />
+</navigation>

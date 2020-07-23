@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_the_good_life_foundation"
+            android:title="The Good Life Foundation" />
+        <item
+            android:id="@+id/nav_drugs_information"
+            android:title="Drugs Information" />
+        <item
+            android:id="@+id/nav_drugs_we_treat"
+            android:title="Drugs We Treat" />
+        <item
+            android:id="@+id/nav_director_message"
+            android:title="Director Message" />
+        <item
+            android:id="@+id/nav_our_advisory_board"
+            android:title="Our Advisory Board" />
+        <item
+            android:id="@+id/nav_become_our_member"
+            android:title="Become Our Member" />
+        <item
+            android:id="@+id/nav_seek_help"
+            android:title="Seek Help" />
+        <item
+            android:id="@+id/nav_contact_us"
+            android:title="Contact Us" />
+    </group>
+
+</menu>
