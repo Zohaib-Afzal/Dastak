@@ -3,20 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.dastak.dastak.ui.home.HomeFragment"
-        android:label="menu_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/nav_the_good_life_foundation">
 
     <fragment
         android:id="@+id/nav_the_good_life_foundation"
         android:name="com.dastak.dastak.ui.theGoodLifeFoundation.TheGoodLifeFoundation"
-        android:label="menu_the_good_life_foundation"
+        android:label="menu_home"
         tools:layout="@layout/fragment_the_good_life_foundation" />
-
     <fragment
         android:id="@+id/nav_drugs_information"
         android:name="com.dastak.dastak.ui.drugsInformation.DrugsInformation"

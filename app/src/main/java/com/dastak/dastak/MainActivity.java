@@ -33,12 +33,8 @@ public class MainActivity extends AppCompatActivity{
     private void setNavigationViewListener(){
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             switch(menuItem.getItemId()){
-                case R.id.nav_home:
-                    break;
-
                 case R.id.nav_the_good_life_foundation:
                     break;
-
                 case R.id.nav_drugs_information:
                     break;
 
