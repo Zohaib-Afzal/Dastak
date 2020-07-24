@@ -1,17 +1,23 @@
 package com.dastak.dastak.ui.theGoodLifeFoundation;
 
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dastak.dastak.MainActivity;
 import com.dastak.dastak.R;
 import com.dastak.dastak.adaptors.HomeRecyclerViewAdaptor;
+
+import java.util.Objects;
 
 
 public class TheGoodLifeFoundation extends Fragment {
@@ -20,10 +26,13 @@ public class TheGoodLifeFoundation extends Fragment {
    // ArrayList<HomeDataModel> dataArray = new ArrayList<>(8);
     String[] description = new String[8];
     int[] imageSource = new int[8];
+    Button drawerButton;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_the_good_life_foundation, container, false);
         recyclerView = view.findViewById(R.id.home_recycler_view);
+        drawerButton = view.findViewById(R.id.burger_icon);
+        clickListener();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         loadData();
@@ -48,5 +57,12 @@ public class TheGoodLifeFoundation extends Fragment {
          //   dataArray.set(0,homeDataModel);
 
 
+    }
+
+    private void clickListener(){
+        drawerButton.setOnClickListener(view ->{
+            //changing the value of a local variable in main activity to trigger same response as the drawer click in main activity
+                ((MainActivity) requireActivity()).didClickDrawerButton.setValue("true");
+        });
     }
 }
