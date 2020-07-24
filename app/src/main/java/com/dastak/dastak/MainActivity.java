@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.burger_icon);
+        Button button = findViewById(R.id.burger_icon_toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation);
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
