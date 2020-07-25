@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity{
                 openDrawerMenu();
             }
         });
-
     }
 
     private void setNavigationViewListener(){
@@ -102,10 +101,17 @@ public class MainActivity extends AppCompatActivity{
             drawerLayout.closeDrawer(GravityCompat.START);
             return  true;
         });
-
-
     }
+
     private void openDrawerMenu(){
         drawerLayout.openDrawer(Gravity.LEFT);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        relativeLayout.setVisibility(View.GONE);
+
+
     }
 }

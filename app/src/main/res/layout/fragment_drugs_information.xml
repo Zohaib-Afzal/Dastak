@@ -1,22 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <ScrollView
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+
+    >
+    <TextView
+        android:id="@+id/heading_1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Fragment Drugs Information"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:text="Who needs drug rehab?"
+        />
+    <TextView
+        android:id="@+id/main_text_drugs_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/heading_1"
+        android:textColor="@color/colorPrimary"
 
         />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/heading_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:text="Our Facilities"
+        android:layout_below="@+id/main_text_drugs_info"
+        />
+    <TextView
+        android:id="@+id/facilities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorGreen"
+        android:layout_below="@id/heading_2"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+
+        />
+    <TextView
+        android:id="@+id/heading_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:text="Benefits of Rehab"
+        android:layout_below="@+id/facilities"
+        />
+    <TextView
+        android:id="@+id/benefits_of_rehab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@id/heading_3"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        android:textSize="18sp"
+
+
+        />
+
+
+</RelativeLayout>
+    </ScrollView>
+</LinearLayout>
