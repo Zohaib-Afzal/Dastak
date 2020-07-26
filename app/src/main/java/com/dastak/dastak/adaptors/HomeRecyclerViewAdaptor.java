@@ -24,10 +24,14 @@ public class HomeRecyclerViewAdaptor extends RecyclerView.Adapter<HomeRecyclerVi
         private  ArrayList<HomeDataModel> dataArray;
         private int[] source;
         private String[] description;
-//    public HomeRecyclerViewAdaptor(Context context , ArrayList<HomeDataModel> dataArray) {
-//        this.context = context;
-//        this.dataArray = dataArray;
-//    }
+        private onItemClickListener onItemClickListener;
+public interface onItemClickListener{
+    void onItemClick(int position);
+}
+public void setOnItemClickListener(onItemClickListener onItemClickListener){
+    this.onItemClickListener = onItemClickListener;
+
+}
 public HomeRecyclerViewAdaptor(Context context , int[] source, String[] description) {
     this.context = context;
     this.source = source;
@@ -75,6 +79,22 @@ public HomeRecyclerViewAdaptor(Context context , int[] source, String[] descript
             description = itemView.findViewById(R.id.description);
             image = itemView.findViewById(R.id.image);
             cardView = itemView.findViewById(R.id.card_view);
+            cardView.setOnClickListener(view ->{
+                if(onItemClickListener != null) {
+
+
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+
+                        onItemClickListener.onItemClick(position);
+
+
+                    }
+                }
+
+
+
+            });
         }
     }
 }

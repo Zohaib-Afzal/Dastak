@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,17 +29,18 @@ public class TheGoodLifeFoundation extends Fragment {
     String[] description = new String[8];
     int[] imageSource = new int[8];
     Button drawerButton;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_the_good_life_foundation, container, false);
         recyclerView = view.findViewById(R.id.home_recycler_view);
         drawerButton = view.findViewById(R.id.burger_icon);
-        clickListener();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         loadData();
     //    homeRecyclerViewAdaptor = new HomeRecyclerViewAdaptor(getActivity(),dataArray);
         homeRecyclerViewAdaptor = new HomeRecyclerViewAdaptor(getActivity(),imageSource,description);
+        clickListener();
         recyclerView.setAdapter(homeRecyclerViewAdaptor);
 
         return view;
@@ -64,5 +67,15 @@ public class TheGoodLifeFoundation extends Fragment {
             //changing the value of a local variable in main activity to trigger same response as the drawer click in main activity
                 ((MainActivity) requireActivity()).didClickDrawerButton.setValue("true");
         });
+
+        homeRecyclerViewAdaptor.setOnItemClickListener(position -> {
+            ((MainActivity) requireActivity()).selectedItemFromHome.setValue(String.valueOf(position));
+
+        });
+
+
     }
+
+
+
 }
