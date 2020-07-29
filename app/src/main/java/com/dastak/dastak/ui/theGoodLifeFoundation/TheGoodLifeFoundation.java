@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dastak.dastak.MainActivity;
 import com.dastak.dastak.R;
 import com.dastak.dastak.adaptors.HomeRecyclerViewAdaptor;
+import com.dastak.dastak.dataModel.HomeDataModel;
 
 import java.util.Objects;
 
@@ -25,10 +26,10 @@ import java.util.Objects;
 public class TheGoodLifeFoundation extends Fragment {
     RecyclerView recyclerView;
     HomeRecyclerViewAdaptor homeRecyclerViewAdaptor;
-   // ArrayList<HomeDataModel> dataArray = new ArrayList<>(8);
     String[] description = new String[8];
     int[] imageSource = new int[8];
     Button drawerButton;
+    HomeDataModel homeDataModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,7 +43,6 @@ public class TheGoodLifeFoundation extends Fragment {
         homeRecyclerViewAdaptor = new HomeRecyclerViewAdaptor(getActivity(),imageSource,description);
         clickListener();
         recyclerView.setAdapter(homeRecyclerViewAdaptor);
-
         return view;
     }
 

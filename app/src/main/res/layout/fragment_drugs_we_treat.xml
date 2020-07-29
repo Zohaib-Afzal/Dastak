@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-
     >
-
-    <TextView
-        android:id="@+id/text_tools"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Fragment Drugs We Treat"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="40dp"
+            >
 
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                 android:id="@+id/drugs_we_treat"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="25sp"
+                 android:textColor="@color/colorPrimary"
+                 android:textStyle="bold"
+                android:text="Drugs We Treat"
+
+                />
+             <TextView
+                 android:id="@+id/detail"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/drugs_we_treat"
+                 android:textSize="18sp"
+                 android:layout_marginTop="10dp"
+                 android:text="Our Facility treats all kind of drug addiction such as"
+                 />
+
+             <androidx.recyclerview.widget.RecyclerView
+                 android:id="@+id/drugs_we_treat_recycler_view"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/detail"
+                 android:layout_marginTop="15dp"
+                 android:layout_marginBottom="50dp"
+                 />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
