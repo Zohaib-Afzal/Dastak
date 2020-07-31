@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity{
     Button backButton;
     final Handler handler = new Handler();
     boolean isHomeDisplayed = false;
+    boolean isDrawerDrugsWeTreat = false;
+    boolean isDrawerDrugsWeTreatDetail = false;
+
     //to make string changing live data
     public MutableLiveData<String> didClickDrawerButton = new MutableLiveData<>();
     public MutableLiveData<String> selectedItemFromHome = new MutableLiveData<>();
@@ -104,6 +107,8 @@ public class MainActivity extends AppCompatActivity{
                 case R.id.nav_drugs_we_treat:
                         fragment = new DrugsWeTreat();
                         tag = FragmentTransitionTagUtil.TAG_DRUGS_WE_TREAT;
+                        isDrawerDrugsWeTreat = true;
+
                     break;
 
                 case R.id.nav_director_message:
@@ -148,8 +153,8 @@ public class MainActivity extends AppCompatActivity{
         if(fragmentManager.getBackStackEntryCount()>0) {
             fragmentManager.popBackStackImmediate();
 
-            Fragment fragment = fragmentManager.findFragmentByTag(FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION);
-            if(fragment!=null && fragment.isVisible()){
+            Fragment fragmentTheGoodLifeFoundation = fragmentManager.findFragmentByTag(FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION);
+            if(fragmentTheGoodLifeFoundation!=null && fragmentTheGoodLifeFoundation.isVisible()){
                 isHomeDisplayed = true;
             }
             if(isHomeDisplayed){
@@ -161,7 +166,13 @@ public class MainActivity extends AppCompatActivity{
             }
         } else{
             moveTaskToBack(true);
+
             relativeLayout.setVisibility(View.GONE);
+        }
+
+        if(isDrawerDrugsWeTreatDetail){
+            backButton.setVisibility(View.GONE);
+            drawerButton.setVisibility(View.VISIBLE);
 
         }
 
@@ -170,6 +181,7 @@ public class MainActivity extends AppCompatActivity{
     public void pushFragment(Fragment fragment, String tag, boolean isDrugsDetail) {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         //checking if coming fragment matches home fragment
+
         isHomeDisplayed = fragment.equals(theGoodLifeFoundation);
         //to check if the fragment has not already been instantiated
        // removeFragment(tag);
@@ -234,6 +246,7 @@ public class MainActivity extends AppCompatActivity{
             drugsWeTreatItemClickCases(position);
         });
 
+
     }
 
     public void findViews(){
@@ -265,7 +278,6 @@ public class MainActivity extends AppCompatActivity{
         relativeLayout.setVisibility(View.VISIBLE);
 
     }
-
     private void setDrawerVisibility(){
         relativeLayout.setVisibility(View.VISIBLE);
         drawerButton.setVisibility(View.VISIBLE);
@@ -293,7 +305,7 @@ public class MainActivity extends AppCompatActivity{
 
                 case 2:
                     pushFragment(drugsWeTreat, FragmentTransitionTagUtil.TAG_DRUGS_WE_TREAT,false);
-
+                    isDrawerDrugsWeTreat = false;
                     break;
 
                 case 3:
@@ -330,6 +342,15 @@ public class MainActivity extends AppCompatActivity{
             loadDetailData();
             drugsWeTreatDetail = new DrugsWeTreatDetail(drugsTitle[position],drugsDetail[position]);
             pushFragment(drugsWeTreatDetail, "DRUGS WE TREAT DETAIL", true);
+            if(isDrawerDrugsWeTreat){
+                backButton.setVisibility(View.VISIBLE);
+                drawerButton.setVisibility(View.GONE);
+                isDrawerDrugsWeTreatDetail = true;
+            } else{
+                isDrawerDrugsWeTreatDetail = false;
+
+            }
+
         }
 
 
@@ -406,4 +427,6 @@ public class MainActivity extends AppCompatActivity{
 
 
     }
+
+
 }

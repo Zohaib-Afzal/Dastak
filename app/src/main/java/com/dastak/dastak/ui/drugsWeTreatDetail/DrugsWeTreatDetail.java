@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.dastak.dastak.MainActivity;
 import com.dastak.dastak.R;
 
 public class DrugsWeTreatDetail extends Fragment {
