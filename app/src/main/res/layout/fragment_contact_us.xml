@@ -64,8 +64,11 @@
         android:layout_below="@id/heading_phone_number"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="03135488901"
+        android:text="+923135488901"
         android:textStyle="bold"
+        android:autoLink="phone"
+        android:linksClickable="true"
+        android:textColorLink="@color/colorGreen"
         />
     <TextView
         android:id="@+id/heading_email"
@@ -93,6 +96,9 @@
         android:layout_marginTop="10dp"
         android:text="info@tglf.org.pk"
         android:textStyle="bold"
+        android:autoLink="email"
+        android:linksClickable="true"
+        android:textColorLink="@color/colorGreen"
         />
     <TextView
         android:id="@+id/heading_website"
@@ -121,6 +127,9 @@
         android:text="tglf.org.pk"
         android:textStyle="bold"
         android:layout_marginBottom="40dp"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:textColorLink="@color/colorGreen"
 
         />
     </RelativeLayout>

@@ -10,6 +10,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity{
     DrugsWeTreatDetail drugsWeTreatDetail;
     Button drawerButton;
     Button backButton;
+    Button webButton;
     final Handler handler = new Handler();
     boolean isHomeDisplayed = false;
     boolean isDrawerDrugsWeTreat = false;
@@ -233,6 +236,10 @@ public class MainActivity extends AppCompatActivity{
         backButton.setOnClickListener(v ->{
             onBackPressed();
         });
+        webButton.setOnClickListener(v ->{
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.tglf.org.pk"));
+            startActivity(browserIntent);
+        });
 
         selectedItemFromHome.observe(this, stringPosition ->{
             int position = Integer.parseInt(stringPosition);
@@ -252,6 +259,7 @@ public class MainActivity extends AppCompatActivity{
     public void findViews(){
         drawerButton = findViewById(R.id.burger_icon_toolbar);
         backButton = findViewById(R.id.back_icon_toolbar);
+        webButton = findViewById(R.id.button_website);
         drawerLayout = findViewById(R.id.drawer_layout);
         relativeLayout = findViewById(R.id.app_toolbar);
         navigationView = findViewById(R.id.navigation);
