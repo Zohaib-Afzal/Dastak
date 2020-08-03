@@ -22,6 +22,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="30dp"
                 android:text="The Good Life Foundation"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading1_detail1"
@@ -33,6 +34,7 @@
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading1_detail2"
@@ -43,6 +45,7 @@
                 android:layout_marginTop="30dp"
                 android:textColor="@color/colorGreen"
                 android:textSize="18sp"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading2"
@@ -55,6 +58,7 @@
                 android:layout_marginStart="30dp"
                 android:text="Our Mission"
                 android:layout_below="@id/heading1_detail2"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading2_detail"
@@ -63,10 +67,10 @@
                 android:layout_below="@+id/heading2"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading3"
@@ -79,6 +83,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_below="@id/heading2_detail"
                 android:text="Our Vision"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading3_detail"
@@ -87,10 +92,10 @@
                 android:layout_below="@+id/heading3"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading4"
@@ -103,6 +108,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_below="@id/heading3_detail"
                 android:text="Our Core Values"
+                android:fontFamily="@font/rajdhani_regular"
                 />
             <TextView
                 android:id="@+id/heading4_detail"
@@ -111,11 +117,12 @@
                 android:layout_below="@+id/heading4"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-
                 android:layout_marginTop="30dp"
                 android:textColor="@color/colorGreen"
                 android:textSize="18sp"
                 android:layout_marginBottom="40dp"
+                android:fontFamily="@font/rajdhani_regular"
+
                 />
 
         </RelativeLayout>

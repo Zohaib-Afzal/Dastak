@@ -26,6 +26,7 @@
                  android:textColor="@color/colorPrimary"
                  android:textStyle="bold"
                 android:text="Drugs We Treat"
+                android:fontFamily="@font/rajdhani_regular"
 
                 />
              <TextView
@@ -36,6 +37,7 @@
                  android:textSize="18sp"
                  android:layout_marginTop="10dp"
                  android:text="Our Facility treats all kind of drug addiction such as"
+                 android:fontFamily="@font/rajdhani_regular"
                  />
 
              <androidx.recyclerview.widget.RecyclerView

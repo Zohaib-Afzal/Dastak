@@ -29,6 +29,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="25dp"
                 android:text="Platinum"
+                android:fontFamily="@font/rajdhani_regular"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
 
@@ -42,6 +43,7 @@
                 android:textColor="@color/colorGreen"
                 android:textSize="22dp"
                 android:text="Rs. 10,000"
+                android:fontFamily="@font/rajdhani_regular"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
 
@@ -54,6 +56,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="20dp"
                 android:text="Benefits:"
+                android:fontFamily="@font/rajdhani_regular"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
 

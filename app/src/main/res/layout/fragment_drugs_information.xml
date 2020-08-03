@@ -29,6 +29,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="Who needs drug rehab?"
+        android:fontFamily="@font/rajdhani_regular"
         />
     <TextView
         android:id="@+id/main_text_drugs_info"
@@ -38,6 +39,7 @@
         android:textSize="18sp"
         android:layout_below="@+id/heading_1"
         android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/rajdhani_regular"
 
         />
 
@@ -50,6 +52,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="Our Facilities"
+        android:fontFamily="@font/rajdhani_regular"
         android:layout_below="@+id/main_text_drugs_info"
         />
     <TextView
@@ -60,6 +63,7 @@
         android:layout_below="@id/heading_2"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
+        android:fontFamily="@font/rajdhani_regular"
 
         />
     <TextView
@@ -71,6 +75,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="Benefits of Rehab"
+        android:fontFamily="@font/rajdhani_regular"
         android:layout_below="@+id/facilities"
         />
     <TextView
@@ -82,6 +87,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="40dp"
         android:textSize="18sp"
+        android:fontFamily="@font/rajdhani_regular"
 
 
         />

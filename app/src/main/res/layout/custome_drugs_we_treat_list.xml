@@ -25,6 +25,7 @@
                 android:layout_marginStart="30dp"
                 android:textColor="@color/white"
                 android:text="01. Crystal Meth"
+                android:fontFamily="@font/rajdhani_regular"
                 android:textSize="25dp"
                 android:textStyle="bold"
 
@@ -38,6 +39,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
+                android:fontFamily="@font/rajdhani_regular"
                 android:textSize="18sp"
 
                 />
@@ -49,6 +51,7 @@
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorGreen"
                 android:text="Read More"
+                android:fontFamily="@font/rajdhani_regular"
                 android:drawableEnd="@drawable/forward_icon_green"
                 android:drawablePadding="10dp"
                 android:textSize="18sp"

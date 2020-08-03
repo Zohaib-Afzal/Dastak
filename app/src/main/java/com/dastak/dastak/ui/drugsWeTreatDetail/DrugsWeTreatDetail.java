@@ -12,14 +12,13 @@ import androidx.fragment.app.Fragment;
 
 import com.dastak.dastak.MainActivity;
 import com.dastak.dastak.R;
+import com.dastak.dastak.dataModel.DrugsWeTreatDetailDataModel;
 
 public class DrugsWeTreatDetail extends Fragment {
 
-    String drugTitle;
-    String drugDetail;
-    public DrugsWeTreatDetail(String drugTitle,String drugDetail) {
-        this.drugDetail = drugDetail;
-        this.drugTitle = drugTitle;
+    int position;
+    public DrugsWeTreatDetail(int position) {
+        this.position = position;
     }
 
     @Nullable
@@ -28,8 +27,8 @@ public class DrugsWeTreatDetail extends Fragment {
         View view  = inflater.inflate(R.layout.fragment_drugs_we_treat_detail,container,false);
         TextView drugsNameTextView = view.findViewById(R.id.drugs_heading);
         TextView drugsDetailTextView = view.findViewById(R.id.drugs_detail);
-        drugsDetailTextView.setText(drugDetail);
-        drugsNameTextView.setText(drugTitle);
+        drugsDetailTextView.setText(DrugsWeTreatDetailDataModel.drugsDetail[position]);
+        drugsNameTextView.setText(DrugsWeTreatDetailDataModel.drugsTitle[position]);
         return view;
     }
 }

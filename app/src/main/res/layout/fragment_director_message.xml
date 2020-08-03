@@ -38,6 +38,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:text="Executive Director Message"
+        android:fontFamily="@font/rajdhani_regular"
         android:textColor="@color/colorPrimary"
         android:layout_below="@+id/director_image"
         />
@@ -50,6 +51,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/heading"
+        android:fontFamily="@font/rajdhani_regular"
         android:textSize="18sp"
         />
 
@@ -67,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hannan Tariq"
+        android:fontFamily="@font/rajdhani_regular"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
@@ -77,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/director_name"
         android:text="Executive Director"
+        android:fontFamily="@font/rajdhani_regular"
         android:textColor="@color/colorPrimary"
         />
     <TextView
@@ -85,6 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/position"
         android:text="The Good Life Foundation"
+        android:fontFamily="@font/rajdhani_regular"
         android:textColor="@color/colorGreen"
         android:layout_marginBottom="40dp"
 

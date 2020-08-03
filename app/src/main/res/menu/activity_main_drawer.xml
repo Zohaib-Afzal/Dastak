@@ -6,28 +6,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_the_good_life_foundation"
-            android:title="The Good Life Foundation" />
+            android:title="The Good Life Foundation"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_drugs_information"
-            android:title="Drugs Information" />
+            android:title="Drugs Information"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_drugs_we_treat"
-            android:title="Drugs We Treat" />
+            android:title="Drugs We Treat"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_director_message"
-            android:title="Director Message" />
+            android:title="Director Message"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_our_advisory_board"
-            android:title="Our Advisory Board" />
+            android:title="Our Advisory Board"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_become_our_member"
-            android:title="Become Our Member" />
+            android:title="Become Our Member"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_seek_help"
-            android:title="Seek Help" />
+            android:title="Seek Help"
+            android:fontFamily="@font/rajdhani_regular"
+            />
         <item
             android:id="@+id/nav_contact_us"
-            android:title="Contact Us" />
+            android:title="Contact Us"
+            android:fontFamily="@font/rajdhani_regular"
+            />
     </group>
 
 </menu>

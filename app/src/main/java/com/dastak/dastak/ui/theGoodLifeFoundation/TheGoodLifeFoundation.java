@@ -26,10 +26,7 @@ import java.util.Objects;
 public class TheGoodLifeFoundation extends Fragment {
     RecyclerView recyclerView;
     HomeRecyclerViewAdaptor homeRecyclerViewAdaptor;
-    String[] description = new String[8];
-    int[] imageSource = new int[8];
     Button drawerButton;
-    HomeDataModel homeDataModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,30 +35,11 @@ public class TheGoodLifeFoundation extends Fragment {
         drawerButton = view.findViewById(R.id.burger_icon);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
-        loadData();
-    //    homeRecyclerViewAdaptor = new HomeRecyclerViewAdaptor(getActivity(),dataArray);
-        homeRecyclerViewAdaptor = new HomeRecyclerViewAdaptor(getActivity(),imageSource,description);
+        homeRecyclerViewAdaptor = new HomeRecyclerViewAdaptor(getActivity(),HomeDataModel.imageSource,HomeDataModel.description);
         clickListener();
         recyclerView.setAdapter(homeRecyclerViewAdaptor);
         return view;
     }
-
-    private void loadData(){
-
-            description = new String[]{"The Good Life \n Foundation","Drugs \n Information","Drugs We \n Treat",
-                    "Director \n Message","Our Advisory \n Board","Become Our \n Member","SOS","Seeking Help "};
-
-            imageSource = new int[]{R.mipmap.logo_green,R.mipmap.no_drugs,R.mipmap.drugs_we_treat,
-                    R.mipmap.message,R.mipmap.advisory, R.mipmap.membership,R.mipmap.icon_feather_phone_call_green,
-                    R.mipmap.group};
-        //    HomeDataModel homeDataModel = new HomeDataModel();
-         //   homeDataModel.setDescription("Description");
-            //homeDataModel.setImageSource(R.drawable.ic_launcher_foreground);
-         //   dataArray.set(0,homeDataModel);
-
-
-    }
-
     private void clickListener(){
         drawerButton.setOnClickListener(view ->{
             //changing the value of a local variable in main activity to trigger same response as the drawer click in main activity
@@ -72,10 +50,5 @@ public class TheGoodLifeFoundation extends Fragment {
             ((MainActivity) requireActivity()).selectedItemFromHome.setValue(String.valueOf(position));
 
         });
-
-
     }
-
-
-
 }

@@ -25,12 +25,14 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="Become a Member for a Cause"
+        android:fontFamily="@font/rajdhani_regular"
         />
     <TextView
         android:id="@+id/heading_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
+        android:fontFamily="@font/rajdhani_regular"
         android:textColor="@color/colorPrimary"
         android:layout_below="@id/heading"
         android:layout_centerHorizontal="true"
