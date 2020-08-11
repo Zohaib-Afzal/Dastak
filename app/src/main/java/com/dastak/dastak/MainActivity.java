@@ -278,7 +278,7 @@ public class MainActivity extends AppCompatActivity{
                  break;
              case R.id.nav_drugs_information:
                  fragment = drugsInformation;
-                 tag = FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION_DETAIL;
+                 tag = FragmentTransitionTagUtil.TAG_DRUGS_INFORMATION;
                  break;
 
              case R.id.nav_drugs_we_treat:

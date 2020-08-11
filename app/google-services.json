@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "780981581859",
+    "firebase_url": "https://dastak-c4ee2.firebaseio.com",
+    "project_id": "dastak-c4ee2",
+    "storage_bucket": "dastak-c4ee2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780981581859:android:a0299961fb75af3e571996",
+        "android_client_info": {
+          "package_name": "com.dastak.dastak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780981581859-fj5qonctfdjiabtjtbbnelngudib88jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNqeQ2xgfqVHb2x5MANZrhG-z0ypy3qmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780981581859-fj5qonctfdjiabtjtbbnelngudib88jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
