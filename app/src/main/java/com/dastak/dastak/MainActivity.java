@@ -99,27 +99,31 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void onBackPressed() {
-        if(fragmentManager.getBackStackEntryCount()>0) {
-            fragmentManager.popBackStackImmediate();
+        Fragment fragmentTheGoodLifeFoundation = fragmentManager.findFragmentByTag(FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION);
+        if(fragmentManager.getBackStackEntryCount()==1 && fragmentTheGoodLifeFoundation!=null && fragmentTheGoodLifeFoundation.isVisible()){
 
-            Fragment fragmentTheGoodLifeFoundation = fragmentManager.findFragmentByTag(FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION);
-            if(fragmentTheGoodLifeFoundation!=null && fragmentTheGoodLifeFoundation.isVisible()){
-                isHomeDisplayed = true;
-            }
-            if(isHomeDisplayed){
-                backButton.setVisibility(View.GONE);
-                relativeLayout.setVisibility(View.GONE);
-            } else{
-                relativeLayout.setVisibility(View.VISIBLE);
-            }
+            finish();
+        } else {
+            if (fragmentManager.getBackStackEntryCount() > 0) {
+                fragmentManager.popBackStackImmediate();
+                if (fragmentTheGoodLifeFoundation != null && fragmentTheGoodLifeFoundation.isVisible()) {
+                    isHomeDisplayed = true;
+                }
+                if (isHomeDisplayed) {
+                    backButton.setVisibility(View.GONE);
+                    relativeLayout.setVisibility(View.GONE);
+                } else {
+                    relativeLayout.setVisibility(View.VISIBLE);
+                }
 
-            if(isDrawerDrugsWeTreatDetail){
-                backButton.setVisibility(View.GONE);
-                drawerButton.setVisibility(View.VISIBLE);
+                if (isDrawerDrugsWeTreatDetail) {
+                    backButton.setVisibility(View.GONE);
+                    drawerButton.setVisibility(View.VISIBLE);
+                }
+            } else {
+                super.onBackPressed();
+                // relativeLayout.setVisibility(View.GONE);
             }
-        } else{
-            super.onBackPressed();
-           // relativeLayout.setVisibility(View.GONE);
         }
     }
     public void pushFragment(Fragment fragment, String tag) {
