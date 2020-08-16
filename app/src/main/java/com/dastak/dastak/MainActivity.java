@@ -113,10 +113,8 @@ public class MainActivity extends AppCompatActivity{
         } else {
             if (fragmentManager.getBackStackEntryCount() > 0) {
                 fragmentManager.popBackStackImmediate();
-                if (fragmentTheGoodLifeFoundation != null && fragmentTheGoodLifeFoundation.isVisible()) {
-                    isHomeDisplayed = true;
-                }
-                if (isHomeDisplayed) {
+
+                if (drawerButton.getVisibility() == View.VISIBLE) {
                     backButton.setVisibility(View.GONE);
                     relativeLayout.setVisibility(View.GONE);
                 } else {
@@ -126,6 +124,10 @@ public class MainActivity extends AppCompatActivity{
                 if (isDrawerDrugsWeTreatDetail) {
                     backButton.setVisibility(View.GONE);
                     drawerButton.setVisibility(View.VISIBLE);
+                }
+                if(fragmentManager.getBackStackEntryCount()== 1){
+                    backButton.setVisibility(View.GONE);
+                    relativeLayout.setVisibility(View.GONE);
                 }
             } else {
                 super.onBackPressed();
