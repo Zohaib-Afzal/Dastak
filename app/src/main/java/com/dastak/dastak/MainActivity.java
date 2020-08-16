@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.MutableLiveData;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -81,17 +82,24 @@ public class MainActivity extends AppCompatActivity{
     private void setStartingScreen(){
         pushFragment(theGoodLifeFoundation,FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION);
     }
-
     private void setNavigationViewListener(){
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             setDrawerVisibility();
-             fragment = new Fragment();
+            fragment = new Fragment();
             drawerCaseChecking(menuItem.getItemId());
+            popFragmentsUntilHome();
             pushFragment(fragment,tag);
             //This is for closing the drawer after acting on it
             drawerLayout.closeDrawer(GravityCompat.START);
             return  true;
         });
+    }
+    private void popFragmentsUntilHome() {
+        for (Fragment fragment : fragmentManager.getFragments()) {
+            if(!(fragment instanceof TheGoodLifeFoundation) && !(fragment instanceof NavHostFragment)){
+                fragmentManager.popBackStack();
+            }
+        }
     }
 
     private void openDrawerMenu(){
@@ -101,7 +109,6 @@ public class MainActivity extends AppCompatActivity{
     public void onBackPressed() {
         Fragment fragmentTheGoodLifeFoundation = fragmentManager.findFragmentByTag(FragmentTransitionTagUtil.TAG_THE_GOOD_LIFE_FOUNDATION);
         if(fragmentManager.getBackStackEntryCount()==1 && fragmentTheGoodLifeFoundation!=null && fragmentTheGoodLifeFoundation.isVisible()){
-
             finish();
         } else {
             if (fragmentManager.getBackStackEntryCount() > 0) {
@@ -122,7 +129,6 @@ public class MainActivity extends AppCompatActivity{
                 }
             } else {
                 super.onBackPressed();
-                // relativeLayout.setVisibility(View.GONE);
             }
         }
     }
@@ -132,13 +138,11 @@ public class MainActivity extends AppCompatActivity{
 
         isHomeDisplayed = fragment.equals(theGoodLifeFoundation);
         //to check if the fragment has not already been instantiated
-       // removeFragment(tag);
+        // removeFragment(tag);
         if(!fragment.isAdded()) {
             fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
-
-            fragmentTransaction.replace(R.id.nav_host_fragment, fragment, tag);
+            fragmentTransaction.add(R.id.nav_host_fragment, fragment, tag);
             fragmentTransaction.addToBackStack(String.valueOf(true));
-
             fragmentTransaction.commit();
         } else {
             refreshFragment(tag);
@@ -158,7 +162,6 @@ public class MainActivity extends AppCompatActivity{
 
     public void clickListeners(){
         drawerButton.setOnClickListener(v -> openDrawerMenu());
-        //  NavigationUI.setupWithNavController(navigationView, navController);
         setNavigationViewListener();
 
         // to listen when the value of the string is being changed
@@ -264,12 +267,8 @@ public class MainActivity extends AppCompatActivity{
                 isDrawerDrugsWeTreatDetail = true;
             } else{
                 isDrawerDrugsWeTreatDetail = false;
-
             }
-
         }
-
-
             }
 
      private void drawerCaseChecking(int itemId){
@@ -328,35 +327,24 @@ public class MainActivity extends AppCompatActivity{
             case 1:
                 pushFragment(drugsInformation, FragmentTransitionTagUtil.TAG_DRUGS_INFORMATION);
                 break;
-
             case 2:
                 pushFragment(drugsWeTreat, FragmentTransitionTagUtil.TAG_DRUGS_WE_TREAT);
                 isDrawerDrugsWeTreat = false;
                 break;
-
             case 3:
                 pushFragment(directorMessage, FragmentTransitionTagUtil.TAG_DIRECTOR_MESSAGE);
-
                 break;
-
             case 4:
                 pushFragment(ourAdvisoryBoard, FragmentTransitionTagUtil.TAG_OUR_ADVISORY_BOARD);
-
                 break;
-
             case 5:
                 pushFragment(becomeOurMember, FragmentTransitionTagUtil.TAG_BECOME_OUR_MEMBER);
-
                 break;
-
             case 6:
                 pushFragment(contactUs, FragmentTransitionTagUtil.TAG_CONTACT_US);
-
                 break;
-
             case 7:
                 pushFragment(seekHelp, FragmentTransitionTagUtil.TAG_SEEK_HELP);
-
                 break;
             default:
 
