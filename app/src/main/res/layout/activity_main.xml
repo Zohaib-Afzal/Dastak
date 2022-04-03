@@ -53,7 +53,7 @@
                 android:text="Make a Donation"
                 android:fontFamily="@font/rajdhani_regular"
                 android:textColor="@color/white"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:paddingTop="15dp"
@@ -115,8 +115,5 @@
         </RelativeLayout>
 
     </RelativeLayout>
-
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

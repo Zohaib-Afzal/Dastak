@@ -19,7 +19,7 @@ import com.dastak.dastak.dataModel.HomeDataModel;
 
 import java.util.ArrayList;
 
-public class HomeRecyclerViewAdaptor extends RecyclerView.Adapter<HomeRecyclerViewAdaptor.ViewHolder> {
+public class  HomeRecyclerViewAdaptor extends RecyclerView.Adapter<HomeRecyclerViewAdaptor.ViewHolder> {
         private Context context;
         private  ArrayList<HomeDataModel> dataArray;
         private int[] source;
